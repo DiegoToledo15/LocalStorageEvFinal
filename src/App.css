@@ -1,0 +1,132 @@
+.contenedor {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f1f4f8;
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: 560px;
+  padding: 28px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+h1 {
+  margin: 0 0 24px;
+  color: #222222;
+  font-size: 30px;
+  text-align: center;
+}
+
+.formulario {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.formulario input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #c8cdd3;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.formulario input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  background-color: #2563eb;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+.lista-contenedor h2 {
+  margin: 0 0 14px;
+  color: #333333;
+  font-size: 22px;
+}
+
+.mensaje-vacio {
+  margin: 0;
+  color: #666666;
+  text-align: center;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #e1e5ea;
+  border-radius: 6px;
+  background-color: #f8fafc;
+}
+
+.item span {
+  color: #222222;
+  text-align: left;
+  word-break: break-word;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+}
+
+.acciones button:first-child {
+  background-color: #16a34a;
+}
+
+.acciones button:first-child:hover {
+  background-color: #15803d;
+}
+
+.acciones button:last-child {
+  background-color: #dc2626;
+}
+
+.acciones button:last-child:hover {
+  background-color: #b91c1c;
+}
+
+@media (max-width: 520px) {
+  .tarjeta {
+    padding: 20px;
+  }
+
+  .formulario,
+  .item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .acciones {
+    justify-content: flex-end;
+  }
+}
