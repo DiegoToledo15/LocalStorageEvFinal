@@ -3,10 +3,18 @@ function Item({ item, eliminarItem, editarItem }) {
     <li className="item">
       <span>{item.texto}</span>
       <div className="acciones">
-        <button type="button" onClick={() => editarItem(item)}>
+        <button
+          className="boton boton-editar"
+          type="button"
+          onClick={() => editarItem(item)}
+        >
           Editar
         </button>
-        <button type="button" onClick={() => eliminarItem(item.id)}>
+        <button
+          className="boton boton-eliminar"
+          type="button"
+          onClick={() => eliminarItem(item.id)}
+        >
           Eliminar
         </button>
       </div>

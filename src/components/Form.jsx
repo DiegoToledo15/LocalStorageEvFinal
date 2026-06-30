@@ -31,7 +31,9 @@ function Form({ agregarOActualizar, itemEditar }) {
         value={texto}
         onChange={(evento) => setTexto(evento.target.value)}
       />
-      <button type="submit">{itemEditar ? 'Actualizar' : 'Agregar'}</button>
+      <button className="boton boton-principal" type="submit">
+        {itemEditar ? 'Actualizar' : 'Agregar'}
+      </button>
     </form>
   )
 }

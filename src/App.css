@@ -16,7 +16,7 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-h1 {
+.titulo-principal {
   margin: 0 0 24px;
   color: #222222;
   font-size: 30px;
@@ -42,17 +42,20 @@ h1 {
   border-color: #2563eb;
 }
 
-button {
+.boton {
   padding: 10px 14px;
   border: none;
   border-radius: 6px;
   color: #ffffff;
-  background-color: #2563eb;
   font-size: 15px;
   cursor: pointer;
 }
 
-button:hover {
+.boton-principal {
+  background-color: #2563eb;
+}
+
+.boton-principal:hover {
   background-color: #1d4ed8;
 }
 
@@ -99,19 +102,19 @@ button:hover {
   gap: 8px;
 }
 
-.acciones button:first-child {
+.boton-editar {
   background-color: #16a34a;
 }
 
-.acciones button:first-child:hover {
+.boton-editar:hover {
   background-color: #15803d;
 }
 
-.acciones button:last-child {
+.boton-eliminar {
   background-color: #dc2626;
 }
 
-.acciones button:last-child:hover {
+.boton-eliminar:hover {
   background-color: #b91c1c;
 }
 

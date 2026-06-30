@@ -50,7 +50,7 @@ function App() {
   return (
     <main className="contenedor">
       <section className="tarjeta">
-        <h1>CRUD con Local Storage</h1>
+        <h1 className="titulo-principal">CRUD con Local Storage</h1>
         <Form
           agregarOActualizar={agregarOActualizar}
           itemEditar={itemEditar}
