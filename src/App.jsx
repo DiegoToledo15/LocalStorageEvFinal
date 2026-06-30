@@ -7,6 +7,7 @@ function App() {
   const [items, setItems] = useState([])
   const [itemEditar, setItemEditar] = useState(null)
   const [datosCargados, setDatosCargados] = useState(false)
+  const [busqueda, setBusqueda] = useState('')
 
   useEffect(() => {
     const itemsGuardados = JSON.parse(localStorage.getItem('items')) || []
@@ -32,6 +33,7 @@ function App() {
       const nuevoItem = {
         id: Date.now(),
         texto,
+        completado: false,
       }
 
       setItems([...items, nuevoItem])
@@ -39,7 +41,7 @@ function App() {
   }
 
   const eliminarItem = (id) => {
-    const confirmar = confirm('¿Seguro que deseas eliminar este elemento?')
+    const confirmar = confirm('Seguro que deseas eliminar este elemento?')
 
     if (!confirmar) {
       return
@@ -53,6 +55,33 @@ function App() {
     setItemEditar(item)
   }
 
+  const cambiarCompletado = (id) => {
+    const itemsActualizados = items.map((item) =>
+      item.id === id ? { ...item, completado: !item.completado } : item,
+    )
+
+    setItems(itemsActualizados)
+  }
+
+  const borrarTodos = () => {
+    if (items.length === 0) {
+      return
+    }
+
+    const confirmar = confirm('Seguro que deseas borrar todos los elementos?')
+
+    if (!confirmar) {
+      return
+    }
+
+    setItems([])
+    setItemEditar(null)
+  }
+
+  const itemsFiltrados = items.filter((item) =>
+    item.texto.toLowerCase().includes(busqueda.toLowerCase()),
+  )
+
   return (
     <main className="contenedor">
       <section className="tarjeta">
@@ -62,10 +91,25 @@ function App() {
           itemEditar={itemEditar}
         />
         <p className="contador">Total: {items.length}</p>
+        <input
+          className="buscador"
+          type="text"
+          placeholder="Buscar elemento"
+          value={busqueda}
+          onChange={(evento) => setBusqueda(evento.target.value)}
+        />
+        <button
+          className="boton boton-borrar-todo"
+          type="button"
+          onClick={borrarTodos}
+        >
+          Borrar todo
+        </button>
         <List
-          items={items}
+          items={itemsFiltrados}
           eliminarItem={eliminarItem}
           editarItem={editarItem}
+          cambiarCompletado={cambiarCompletado}
         />
       </section>
     </main>

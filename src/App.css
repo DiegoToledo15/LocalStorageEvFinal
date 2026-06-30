@@ -73,6 +73,30 @@
   text-align: center;
 }
 
+.buscador {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  border: 1px solid #c8cdd3;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.buscador:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.boton-borrar-todo {
+  width: 100%;
+  margin-bottom: 24px;
+  background-color: #7f1d1d;
+}
+
+.boton-borrar-todo:hover {
+  background-color: #991b1b;
+}
+
 .lista-contenedor h2 {
   margin: 0 0 14px;
   color: #333333;
@@ -105,10 +129,21 @@
   background-color: #f8fafc;
 }
 
-.item span {
+.estado-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.texto-item {
   color: #222222;
   text-align: left;
   word-break: break-word;
+}
+
+.completado {
+  color: #777777;
+  text-decoration: line-through;
 }
 
 .acciones {

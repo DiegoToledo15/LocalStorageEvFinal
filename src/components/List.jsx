@@ -1,6 +1,6 @@
 import Item from './Item'
 
-function List({ items, eliminarItem, editarItem }) {
+function List({ items, eliminarItem, editarItem, cambiarCompletado }) {
   return (
     <section className="lista-contenedor">
       <h2>Elementos guardados</h2>
@@ -15,6 +15,7 @@ function List({ items, eliminarItem, editarItem }) {
               item={item}
               eliminarItem={eliminarItem}
               editarItem={editarItem}
+              cambiarCompletado={cambiarCompletado}
             />
           ))}
         </ul>
