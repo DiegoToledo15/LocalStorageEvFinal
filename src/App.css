@@ -26,7 +26,7 @@
 .formulario {
   display: flex;
   gap: 10px;
-  margin-bottom: 28px;
+  margin-bottom: 10px;
 }
 
 .formulario input {
@@ -57,6 +57,20 @@
 
 .boton-principal:hover {
   background-color: #1d4ed8;
+}
+
+.mensaje-error {
+  margin: 0 0 16px;
+  color: #dc2626;
+  font-size: 14px;
+  text-align: center;
+}
+
+.contador {
+  margin: 0 0 24px;
+  color: #444444;
+  font-weight: bold;
+  text-align: center;
 }
 
 .lista-contenedor h2 {

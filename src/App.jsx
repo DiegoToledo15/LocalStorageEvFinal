@@ -39,6 +39,12 @@ function App() {
   }
 
   const eliminarItem = (id) => {
+    const confirmar = confirm('¿Seguro que deseas eliminar este elemento?')
+
+    if (!confirmar) {
+      return
+    }
+
     const itemsFiltrados = items.filter((item) => item.id !== id)
     setItems(itemsFiltrados)
   }
@@ -55,6 +61,7 @@ function App() {
           agregarOActualizar={agregarOActualizar}
           itemEditar={itemEditar}
         />
+        <p className="contador">Total: {items.length}</p>
         <List
           items={items}
           eliminarItem={eliminarItem}
